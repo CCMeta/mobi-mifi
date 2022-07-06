@@ -53,4 +53,13 @@ const onClickLeft = () => router.go(-1)
 </template>
 
 <style lang="less">
+div.van-dialog {
+  background-color: #383850;
+  color: #FFF;
+
+  button {
+    color: #FFF;
+    background-color: transparent;
+  }
+}
 </style>

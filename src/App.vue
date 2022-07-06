@@ -25,5 +25,6 @@ body {
   i.van-icon {
     font: normal normal normal 20px 'vant-icon';
   }
+
 }
 </style>
