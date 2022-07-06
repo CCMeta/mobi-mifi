@@ -64,7 +64,7 @@ function networkModeMap(v) {
       left-arrow @click-left="onClickLeft" />
     <br />
 
-    <van-cell-group>
+    <van-cell-group inset>
       <van-cell center title="Network">
         <template #right-icon>
           <van-switch inactive-color="#EEE" v-model="NetworkChecked" size="24" />
@@ -89,7 +89,7 @@ function networkModeMap(v) {
 
     </van-cell-group>
     <br />
-    <van-button block color="rgba(255,255,255,0.3)" @click="onSubmit">
+    <van-button block color="rgba(80,100,240,1)" @click="onSubmit">
       Save
     </van-button>
 

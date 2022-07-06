@@ -26,13 +26,13 @@ const onClickLeft = () => router.go(-1)
       left-arrow @click-left="onClickLeft" />
     <br />
 
-    <van-cell-group>
+    <van-cell-group inset>
       <van-field v-model="password" type="password" placeholder="Current Password" />
       <van-field v-model="newPassword" type="password" placeholder="New Password" />
       <van-field v-model="newPassword2" type="password" placeholder="Confirm Password" />
     </van-cell-group>
     <br />
-    <van-button block color="rgba(255,255,255,0.3)" @click="onSubmit">
+    <van-button block color="rgba(80,100,240,1)" @click="onSubmit">
       Save
     </van-button>
 
@@ -41,6 +41,6 @@ const onClickLeft = () => router.go(-1)
 
 <style lang="less">
 :root {
-  --van-field-placeholder-text-color: #64b5f6;
+  --van-field-placeholder-text-color: rgba(255, 255, 255, 0.3);
 }
 </style>

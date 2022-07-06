@@ -13,13 +13,17 @@
 
 <style lang="less">
 body {
-  background-color: #2196f3;
+  background-color: #383850;
 
   span,
   label {
     font-family: "Nunito-Regular" !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  i.van-icon {
+    font: normal normal normal 20px 'vant-icon';
   }
 }
 </style>

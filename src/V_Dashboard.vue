@@ -76,19 +76,20 @@ const bit2MB = bit => bit.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
 }
 
 :root {
-  --van-cell-group-background-color: rgba(255, 255, 255, 0.8);
+  --van-grid-item-content-background-color: rgba(0, 0, 0, 0.2);
+  --van-cell-group-background-color: rgba(0, 0, 0, 0.2);
   --van-cell-group-title-color: #FFF;
   // --van-cell-value-color: #FFF;
   // --van-cell-label-color: #FFF;
-  // --van-cell-text-color: #FFF;
+  --van-cell-text-color: #FFF;
   --van-cell-background-color: transparent;
   --van-cell-border-color: #CCC;
   --van-cell-icon-size: 30px;
-  --van-grid-item-content-background-color: #1976d2;
 
   --van-nav-bar-icon-color: #FFF;
   --van-nav-bar-title-text-color: #FFF;
-  --van-nav-bar-background-color: #1976d2;
+  --van-nav-bar-background-color: #5064F0;
+
 
 }
 
