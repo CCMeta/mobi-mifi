@@ -88,7 +88,7 @@ const bit2MB = bit => bit.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
 
   --van-nav-bar-icon-color: #FFF;
   --van-nav-bar-title-text-color: #FFF;
-  --van-nav-bar-background-color: #5064F0;
+  --van-nav-bar-background-color: rgba(45, 45, 65, 1);
 
 
 }

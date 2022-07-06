@@ -89,8 +89,8 @@ const openUri = action => router.push(action.value)
 
 <style lang="less">
 :root {
-  --van-tabbar-background-color: #5064f0;
-  --van-tabbar-item-active-background-color: #4657d3;
+  --van-tabbar-background-color: rgba(45, 45, 65, 1);
+  --van-tabbar-item-active-background-color: #4D68EE;
   --van-tabbar-item-active-color: #fff;
   --van-tabbar-item-text-color: #fff;
   --van-tabbar-height: 60px;
