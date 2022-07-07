@@ -32,7 +32,7 @@ const onClickLeft = () => router.go(-1)
       <van-field v-model="newPassword2" type="password" placeholder="Confirm Password" />
     </van-cell-group>
     <br />
-    <van-button block color="rgba(80,100,240,1)" @click="onSubmit">
+    <van-button block color="#4d68ee" @click="onSubmit">
       Save
     </van-button>
 

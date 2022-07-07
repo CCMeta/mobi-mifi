@@ -65,7 +65,7 @@ function IPChecker(ip) {
     </van-cell-group>
 
     <br>
-    <van-button block color="rgba(80,100,240,1)" @click="onSubmit">
+    <van-button block color="#4d68ee" @click="onSubmit">
       Save
     </van-button>
   </div>
@@ -75,5 +75,6 @@ function IPChecker(ip) {
 :root {
   --van-field-input-text-color: rgba(255, 255, 255, 0.8);
   --van-stepper-input-text-color: rgba(255, 255, 255, 0.8);
+  --van-switch-on-background-color: #4d68ee;
 }
 </style>

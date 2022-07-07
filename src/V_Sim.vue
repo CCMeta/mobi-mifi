@@ -89,7 +89,7 @@ function networkModeMap(v) {
 
     </van-cell-group>
     <br />
-    <van-button block color="rgba(80,100,240,1)" @click="onSubmit">
+    <van-button block color="#4d68ee" @click="onSubmit">
       Save
     </van-button>
 
