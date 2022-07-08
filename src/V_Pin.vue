@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 import { fetching } from './utils'
+import { Dialog } from 'vant';
 
 const router = useRouter()
 const pinChecked = ref(true)
@@ -15,6 +16,11 @@ const onSubmit = async () => {
   }
   console.log(form)
   const result = await fetching('operate_pin=' + JSON.stringify(form) + '&')
+  if (!result || result?.result != 'ok') {
+    Dialog({ message: result?.message || "Very Big Exception" });
+    return;
+  }
+  Dialog({ message: 'Save Success' });
 };
 const onClickLeft = () => router.go(-1)
 function boolToInt(v) {

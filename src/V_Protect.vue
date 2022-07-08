@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 import { fetching } from './utils'
+import { Dialog } from 'vant';
 
 const router = useRouter()
 const get_protection_setting = await fetching('get_protection_setting=1&')
@@ -17,6 +18,7 @@ const onSubmit = async () => {
   }
   console.log(form)
   const result = await fetching('save_protection_setting=' + JSON.stringify(form) + '&')
+  result && Dialog({ message: 'Save Success' });
 }
 
 const onClickLeft = () => router.go(-1)

@@ -5,41 +5,40 @@ import { fetching } from './utils'
 import { Dialog } from 'vant';
 
 const router = useRouter()
-const password = ref('')
-const newPassword = ref('')
-const newPassword2 = ref('')
+const account = ref('admin')
+const password = ref('admin')
 
 
 const onSubmit = async () => {
   const form = {
-    "password": btoa(password.value),
-    "newPassword": btoa(newPassword.value),
+    "username": account.value,
+    "passwd": btoa(password.value),
   }
   console.log(form)
-  const result = await fetching('login_password=' + JSON.stringify(form) + '&')
+  const result = await fetching('web_login=' + JSON.stringify(form) + '&')
   if (!result || result?.result != 'ok') {
     Dialog({ message: result?.message || "Very Big Exception" });
     return;
   }
-  Dialog({ message: 'Save Success' });
+  document.cookie = "SessionId=" + result.session
+  router.push('/')
 };
-const onClickLeft = () => router.go(-1)
 </script>
 
 <template>
   <div>
-    <van-nav-bar :border="false" :fixed="true" :placeholder="true" :safe-area-inset-top="true" title="Password Setting"
-      left-arrow @click-left="onClickLeft" />
+    <van-nav-bar :border="false" :fixed="true" :placeholder="true" :safe-area-inset-top="true"
+      title="MOBI Login Page" />
     <br />
 
     <van-cell-group inset>
+      <van-field v-model="account" type="text" placeholder="Current Account" />
       <van-field v-model="password" type="password" placeholder="Current Password" />
-      <van-field v-model="newPassword" type="password" placeholder="New Password" />
-      <van-field v-model="newPassword2" type="password" placeholder="Confirm Password" />
     </van-cell-group>
+
     <br />
     <van-button block color="#4d68ee" @click="onSubmit">
-      Save
+      Login
     </van-button>
 
   </div>

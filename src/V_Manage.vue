@@ -21,13 +21,24 @@ const onSubmitReboot = async () => {
   }
   console.log(form)
   const result = await fetching('restart=1&')
+  if (result || result?.result != 'ok') {
+    Dialog({ message: result?.message || "Very Big Exception" });
+    return;
+  }
+  Dialog({ message: 'Save Success' });
 }
+
 const onSubmitReset = async () => {
   const form = {
     "reset_factory": 1,
   }
   console.log(form)
   const result = await fetching('reset_factory=1&')
+  if (!result || result?.result != 'ok') {
+    Dialog({ message: result?.message || "Very Big Exception" });
+    return;
+  }
+  Dialog({ message: 'Save Success' });
 }
 const onClickLeft = () => router.go(-1)
 </script>

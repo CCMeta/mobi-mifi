@@ -4,6 +4,7 @@ import { ConfigProvider } from 'vant';
 
 
 import App from './App.vue'
+import V_Login from './V_Login.vue'
 import V_Dashboard from './V_Dashboard.vue'
 import V_Sim from './V_Sim.vue'
 import V_Wifi from './V_Wifi.vue'
@@ -16,6 +17,7 @@ import V_Password from './V_Password.vue'
 
 const routes = [
   { path: '/', component: V_Dashboard },
+  { path: '/login', component: V_Login },
   { path: '/sim', component: V_Sim },
   { path: '/dhcp', component: V_DHCP },
   { path: '/wifi', component: V_Wifi },

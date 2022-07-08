@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 import { fetching } from './utils'
+import { Dialog } from 'vant';
 
 const router = useRouter()
 const showPicker = ref(false);
@@ -21,6 +22,11 @@ const onSubmit = async () => {
   }
   console.log(form)
   const result = await fetching('set_network_config=' + JSON.stringify(form) + '&')
+  if (!result || result?.result != 'ok') {
+    Dialog({ message: result?.message || "Very Big Exception" });
+    return;
+  }
+  Dialog({ message: 'Save Success' });
 }
 
 const onConfirm = (value) => {
