@@ -60,7 +60,7 @@ const openUri = action => router.push(action.value)
       name="wan" :onclick="_ => onShowPopovers(1)">
       <van-popover :offset="popoverOffset" v-model:show="showPopover1" placement="top-start" :actions="action1"
         @select="openUri">
-        <template #reference>WAN</template>
+        <template #reference>Network</template>
       </van-popover>
     </van-tabbar-item>
     <van-tabbar-item name="wlan"
@@ -68,7 +68,7 @@ const openUri = action => router.push(action.value)
       :onclick="_ => onShowPopovers(2)">
       <van-popover :offset="popoverOffset" v-model:show="showPopover2" placement="top" :actions="action2"
         @select="openUri">
-        <template #reference>LAN</template>
+        <template #reference>WiFi</template>
       </van-popover>
     </van-tabbar-item>
 
@@ -81,11 +81,6 @@ const openUri = action => router.push(action.value)
         <template #reference>Security</template>
       </van-popover>
     </van-tabbar-item>
-
-    <van-tabbar-item name="sms"
-      icon="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOTAgOTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDkwIDkwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojZmZmO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDUsODkuNWMtMjQuNSwwLTQ0LjUtMjAtNDQuNS00NC41YzAtMjQuNSwyMC00NC41LDQ0LjUtNDQuNXM0NC41LDIwLDQ0LjUsNDQuNUM4OS41LDY5LjUsNjkuNSw4OS41LDQ1LDg5LjV6DQoJIE00NSwzLjVDMjIuMSwzLjUsMy41LDIyLjEsMy41LDQ1YzAsMjIuOSwxOC42LDQxLjUsNDEuNSw0MS41Uzg2LjUsNjcuOSw4Ni41LDQ1Qzg2LjUsMjIuMSw2Ny45LDMuNSw0NSwzLjV6Ii8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjEuNCw2MkgyOC42Yy01LjUsMC05LjktNC40LTkuOS05LjlWMzcuNWMwLTUuNSw0LjQtOS45LDkuOS05LjloMzIuOWM1LjUsMCw5LjksNC40LDkuOSw5Ljl2MTQuNg0KCUM3MS4zLDU3LjYsNjYuOSw2Miw2MS40LDYyeiBNMjguNiwzMC42Yy0zLjgsMC02LjksMy4xLTYuOSw2Ljl2MTQuNmMwLDMuOCwzLjEsNi45LDYuOSw2LjloMzIuOWMzLjgsMCw2LjktMy4xLDYuOS02LjlWMzcuNQ0KCWMwLTMuOC0zLjEtNi45LTYuOS02LjlIMjguNnoiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00NSw0OS4xYy0xLjYsMC0zLjMtMC40LTQuOC0xLjJsLTEwLjctNS43Yy0wLjctMC40LTEtMS4zLTAuNi0yYzAuNC0wLjcsMS4zLTEsMi0wLjZsMTAuNyw1LjcNCgljMi4yLDEuMiw0LjgsMS4xLDctMC4xbDkuNi01LjZjMC43LTAuNCwxLjYtMC4yLDIuMSwwLjVjMC40LDAuNywwLjIsMS42LTAuNSwyLjFsLTkuNiw1LjZDNDguNiw0OC42LDQ2LjgsNDkuMSw0NSw0OS4xeiIvPg0KPC9zdmc+DQo="
-      :onclick="_ => onShowPopovers(4)">SMS</van-tabbar-item>
-
     <van-tabbar-item name="system"
       icon="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOTAgOTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDkwIDkwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojZmZmO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDUsODkuNWMtMjQuNSwwLTQ0LjUtMjAtNDQuNS00NC41YzAtMjQuNSwyMC00NC41LDQ0LjUtNDQuNXM0NC41LDIwLDQ0LjUsNDQuNUM4OS41LDY5LjUsNjkuNSw4OS41LDQ1LDg5LjV6DQoJIE00NSwzLjVDMjIuMSwzLjUsMy41LDIyLjEsMy41LDQ1YzAsMjIuOSwxOC42LDQxLjUsNDEuNSw0MS41Uzg2LjUsNjcuOSw4Ni41LDQ1Qzg2LjUsMjIuMSw2Ny45LDMuNSw0NSwzLjV6Ii8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNzIuNSw3OC45aC0zVjM5YzAtMC40LTAuMi0wLjktMC40LTEuMkw1NC42LDIxLjNjLTAuOC0wLjktMS4yLTItMS4yLTMuMlYzLjNoM3YxNC44YzAsMC40LDAuMiwwLjksMC40LDEuMg0KCWwxNC41LDE2LjVjMC44LDAuOSwxLjIsMiwxLjIsMy4yVjc4Ljl6Ii8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzUuNiw3Mi4yaC0zVjQ2LjljMC0wLjUtMC4yLTAuOS0wLjUtMS4zTDE3LjgsMzEuNWMtMC45LTAuOS0xLjQtMi4xLTEuNC0zLjR2LTE3aDN2MTdjMCwwLjUsMC4yLDAuOSwwLjUsMS4zDQoJbDE0LjIsMTQuMWMwLjksMC45LDEuNCwyLjEsMS40LDMuNFY3Mi4yeiIvPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTYzLDg0LjdoLTNWNDVjMC0wLjUtMC4yLTAuOS0wLjUtMS4yTDQ1LjYsMjguN2MtMC44LTAuOS0xLjMtMi0xLjMtMy4zVjJoM3YyMy40YzAsMC41LDAuMiwwLjksMC41LDEuMg0KCWwxMy45LDE1LjFjMC44LDAuOSwxLjMsMiwxLjMsMy4zVjg0Ljd6Ii8+DQo8cmVjdCB4PSI1MC40IiB5PSI1Mi42IiBjbGFzcz0ic3QwIiB3aWR0aD0iMyIgaGVpZ2h0PSIzMy42Ii8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDQsODhoLTNWNDIuNWMwLTAuNS0wLjItMC45LTAuNS0xLjJMMzIuNiwzM2MtMC45LTAuOS0xLjMtMi4xLTEuMy0zLjNWMTkuM2gzdjEwLjRjMCwwLjUsMC4yLDAuOSwwLjUsMS4yDQoJbDcuOSw4LjJjMC45LDAuOSwxLjMsMi4xLDEuMywzLjNWODh6Ii8+DQo8Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSI1MS45IiBjeT0iNTIuNiIgcj0iMy42Ii8+DQo8Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSIzMi44IiBjeT0iMTkuMyIgcj0iMy42Ii8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNODMuMSw2My43bC01LTUuMmMtMC45LTAuOS0xLjMtMi4xLTEuMy0zLjNWNDQuOGgzdjEwLjRjMCwwLjUsMC4yLDAuOSwwLjUsMS4ybDUsNS4yTDgzLjEsNjMuN3oiLz4NCjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9Ijc4LjMiIGN5PSI0NC44IiByPSIzLjYiLz4NCjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjM0LjEiIGN5PSI3My43IiByPSIzLjYiLz4NCjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEzLjQiIGN5PSI0NC41IiByPSIzLjYiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNS4yLDgyLjRoLTNWNTUuOGMwLTAuNS0wLjItMS0wLjUtMS4zTDExLjMsNDQuNGwyLjEtMi4ybDEwLjQsMTAuMWMwLjksMC45LDEuNSwyLjIsMS41LDMuNFY4Mi40eiIvPg0KPC9zdmc+DQo="
       :onclick="_ => onShowPopovers(5)">
@@ -94,6 +89,9 @@ const openUri = action => router.push(action.value)
         <template #reference>System</template>
       </van-popover>
     </van-tabbar-item>
+    <van-tabbar-item name="sms"
+      icon="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOTAgOTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDkwIDkwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojZmZmO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDUsODkuNWMtMjQuNSwwLTQ0LjUtMjAtNDQuNS00NC41YzAtMjQuNSwyMC00NC41LDQ0LjUtNDQuNXM0NC41LDIwLDQ0LjUsNDQuNUM4OS41LDY5LjUsNjkuNSw4OS41LDQ1LDg5LjV6DQoJIE00NSwzLjVDMjIuMSwzLjUsMy41LDIyLjEsMy41LDQ1YzAsMjIuOSwxOC42LDQxLjUsNDEuNSw0MS41Uzg2LjUsNjcuOSw4Ni41LDQ1Qzg2LjUsMjIuMSw2Ny45LDMuNSw0NSwzLjV6Ii8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjEuNCw2MkgyOC42Yy01LjUsMC05LjktNC40LTkuOS05LjlWMzcuNWMwLTUuNSw0LjQtOS45LDkuOS05LjloMzIuOWM1LjUsMCw5LjksNC40LDkuOSw5Ljl2MTQuNg0KCUM3MS4zLDU3LjYsNjYuOSw2Miw2MS40LDYyeiBNMjguNiwzMC42Yy0zLjgsMC02LjksMy4xLTYuOSw2Ljl2MTQuNmMwLDMuOCwzLjEsNi45LDYuOSw2LjloMzIuOWMzLjgsMCw2LjktMy4xLDYuOS02LjlWMzcuNQ0KCWMwLTMuOC0zLjEtNi45LTYuOS02LjlIMjguNnoiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00NSw0OS4xYy0xLjYsMC0zLjMtMC40LTQuOC0xLjJsLTEwLjctNS43Yy0wLjctMC40LTEtMS4zLTAuNi0yYzAuNC0wLjcsMS4zLTEsMi0wLjZsMTAuNyw1LjcNCgljMi4yLDEuMiw0LjgsMS4xLDctMC4xbDkuNi01LjZjMC43LTAuNCwxLjYtMC4yLDIuMSwwLjVjMC40LDAuNywwLjIsMS42LTAuNSwyLjFsLTkuNiw1LjZDNDguNiw0OC42LDQ2LjgsNDkuMSw0NSw0OS4xeiIvPg0KPC9zdmc+DQo="
+      :onclick="_ => onShowPopovers(4)">SMS</van-tabbar-item>
   </van-tabbar>
 </template>
 
@@ -101,19 +99,28 @@ const openUri = action => router.push(action.value)
 :root {
   --van-tabbar-background-color: rgba(45, 45, 65, 1);
   --van-tabbar-item-active-background-color: #4D68EE;
-  --van-tabbar-item-active-color: #fff;
-  --van-tabbar-item-text-color: #fff;
+  --van-tabbar-item-active-color: #aaa;
+  --van-tabbar-item-text-color: #aaa;
   --van-tabbar-height: 70px;
   --van-tabbar-item-icon-size: 25px;
   --van-tabbar-z-index: -1;
-
+  --van-tabbar-item-font-size: var(--van-font-size-xs);
   --van-popover-light-background-color: rgba(25, 25, 25, 0.9);
-  --van-popover-light-text-color: #FFF;
+  --van-popover-light-text-color: #ccc;
 }
 
 .van-badge__wrapper.van-tabbar-item__icon {
   transform: scale(1.5);
+  opacity: 0.8;
   padding: 5px 0;
+}
+
+.van-tabbar-item__text {
+  transform: scale(0.7);
+}
+
+.van-hairline--bottom:after {
+  border-bottom-width: 0;
 }
 
 div.van-popup {

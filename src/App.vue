@@ -34,9 +34,11 @@
 body {
   background-color: #383850;
 
+  div,
+  h2,
   span,
   label {
-    font-family: "Nunito-Regular" !important;
+    font-family: "Nunito-Regular";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
