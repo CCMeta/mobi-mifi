@@ -39,8 +39,8 @@ export default {
   build: {
     rollupOptions: {
       output: {
-        // assetFileNames: "[name][extname]",
-        // entryFileNames: "[name].js",
+        assetFileNames: "[name][extname]",
+        entryFileNames: "[name].js",
       }
       // https://rollupjs.org/guide/en/#big-list-of-options
     }
