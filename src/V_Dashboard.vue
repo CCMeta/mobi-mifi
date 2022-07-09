@@ -1,23 +1,14 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import TopBar from './TopBar.vue';
 import TabBar from './TabBar.vue';
 import { fetching } from './utils'
 import { useRouter } from 'vue-router'
 
-const router = useRouter()
 
 // before login can do pin/simlock/language
 const get_web_language = await fetching('get_web_language=1&')
 console.log(get_web_language?.language)
-
-const get_simlock_status = await fetching('get_simlock_status=1&')
-if (get_simlock_status?.status === "1")
-  router.push('simlock')
-
-const get_pin_operate_result = await fetching('get_pin_setting=1&')
-if (get_pin_operate_result?.pinStatus === 1)
-  router.push('pinlock')
 
 // const web_login = await fetching('web_login={"passwd":"admin"}&')
 // document.cookie = "SessionId=" + web_login.session
@@ -25,7 +16,17 @@ const network_speed = await fetching('network_speed=1&')
 const navtop_info = await fetching('navtop_info=1&')
 const connected_devices = await fetching('connected_devices=1&')
 
+onMounted(async () => {
+  const router = useRouter()
 
+  const get_simlock_status = await fetching('get_simlock_status=1&')
+  if (get_simlock_status?.status === "1")
+    await router.push('simlock')
+
+  const get_pin_operate_result = await fetching('get_pin_setting=1&')
+  if (get_pin_operate_result?.pinStatus === 1)
+    await router.push('pinlock')
+})
 
 const bit2MB = bit => bit.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
 </script>
@@ -39,7 +40,7 @@ const bit2MB = bit => bit.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
       <van-grid :border="false" class="state-panel" direction="horizontal" gutter="0" :column-num="2">
         <van-grid-item>
           <h2>
-            <van-icon name="sort" />{{ bit2MB(network_speed.upload) }}
+            <van-icon name="sort" />{{ bit2MB(network_speed?.upload) }}
           </h2>
           <div>
             <div>Up</div>
@@ -48,7 +49,7 @@ const bit2MB = bit => bit.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
         </van-grid-item>
         <van-grid-item>
           <h2>
-            <van-icon name="sort" />{{ bit2MB(network_speed.download) }}
+            <van-icon name="sort" />{{ bit2MB(network_speed?.download) }}
           </h2>
           <div>
             <div>Down</div>
@@ -58,15 +59,15 @@ const bit2MB = bit => bit.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
       </van-grid>
 
       <van-cell-group class="flow-panel" title="Flow Statistics" inset>
-        <van-cell title="Session Flow" :value="bit2MB(navtop_info.cur_send)" label="This Session Data" center />
-        <van-cell title="Month Flow" :value="bit2MB(navtop_info.total_send)" label="This Month Data" center />
-        <van-cell title="Total Flow" :value="bit2MB(navtop_info.total_send)" label="All Time Data" center />
+        <van-cell title="Session Flow" :value="bit2MB(navtop_info?.cur_send)" label="This Session Data" center />
+        <van-cell title="Month Flow" :value="bit2MB(navtop_info?.total_send)" label="This Month Data" center />
+        <van-cell title="Total Flow" :value="bit2MB(navtop_info?.total_send)" label="All Time Data" center />
       </van-cell-group>
 
       <br>
-      <van-cell-group class="client-panel" :title="'Clients = ' + connected_devices.totalNum" inset>
+      <van-cell-group class="client-panel" :title="'Clients = ' + connected_devices?.totalNum" inset>
         <van-cell :title="device.hostName" :value="device.ip_addr" :label="device.mac_addr" center icon="desktop-o"
-          v-for="device in connected_devices.devices" />
+          v-for="device in connected_devices?.devices" />
       </van-cell-group>
     </div>
 

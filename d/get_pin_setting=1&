@@ -1,6 +1,6 @@
 {
     "result": "ok",
-    "pinStatus": 0,
+    "pinStatus": 1,
     "pinEnabled": 1,
     "pinRemain": 3,
     "serialNumber": "4898122247071002"

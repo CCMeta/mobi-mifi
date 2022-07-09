@@ -18,7 +18,6 @@ import V_Manage from './V_Manage.vue'
 import V_Password from './V_Password.vue'
 
 const routes = [
-  { path: '/', component: V_Dashboard },
   { path: '/simlock', component: V_SimLock },
   { path: '/pinlock', component: V_PinLock },
   { path: '/login', component: V_Login },
@@ -30,6 +29,7 @@ const routes = [
   { path: '/device', component: V_Device },
   { path: '/manage', component: V_Manage },
   { path: '/password', component: V_Password },
+  { path: '/', component: V_Dashboard },
 ]
 
 const router = createRouter({
