@@ -4,8 +4,11 @@ import { useRouter } from 'vue-router'
 import { fetching } from './utils'
 import { Dialog } from 'vant';
 
+const get_device_info = await fetching('get_device_info=1&')
+
 const router = useRouter()
-const pinChecked = ref(true)
+const pinLockStatus = ref(!(get_device_info?.pinStatus == 0)) //本次开机已验证PIN码 本次PIN锁定已经解锁
+const pinChecked = ref(!(get_device_info?.pinEnabled == 0)) //PIN码验证功能 已经打开 区别上一个 
 const pinCode = ref('')
 const pinCodeClone = ref('')
 
@@ -37,7 +40,13 @@ function boolToInt(v) {
     <br />
 
     <van-cell-group inset>
-      <van-cell center title="PIN Enabled">
+      <van-cell center title="Current Login PIN Lock Status (ReadOnly)">
+        <template #right-icon>
+          <van-switch inactive-color="#EEE" v-model="pinLockStatus" size="24" disabled />
+        </template>
+      </van-cell>
+
+      <van-cell center title="PIN Lock Function Enable">
         <template #right-icon>
           <van-switch inactive-color="#EEE" v-model="pinChecked" size="24" />
         </template>

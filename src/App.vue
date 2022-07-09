@@ -4,9 +4,9 @@
 <template>
   <suspense>
     <router-view v-slot="{ Component }">
-      <transition name="van-fade">
-        <component :is="Component"></component>
-      </transition>
+      <!-- <transition name="van-fade"> -->
+      <component :is="Component"></component>
+      <!-- </transition> -->
     </router-view>
   </suspense>
 </template>

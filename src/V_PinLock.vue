@@ -25,7 +25,7 @@ const onSubmit = async () => {
 <template>
   <div>
     <van-nav-bar :border="false" :fixed="true" :placeholder="true" :safe-area-inset-top="true"
-      title="MOBI SimLock Page" />
+      title="MOBI PIN Lock Page" />
     <br />
 
     <van-cell-group inset>
