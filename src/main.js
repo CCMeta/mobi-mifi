@@ -4,6 +4,8 @@ import { ConfigProvider } from 'vant';
 
 
 import App from './App.vue'
+import V_SimLock from './V_SimLock.vue'
+import V_PinLock from './V_PinLock.vue'
 import V_Login from './V_Login.vue'
 import V_Dashboard from './V_Dashboard.vue'
 import V_Sim from './V_Sim.vue'
@@ -17,6 +19,8 @@ import V_Password from './V_Password.vue'
 
 const routes = [
   { path: '/', component: V_Dashboard },
+  { path: '/simlock', component: V_SimLock },
+  { path: '/pinlock', component: V_PinLock },
   { path: '/login', component: V_Login },
   { path: '/sim', component: V_Sim },
   { path: '/dhcp', component: V_DHCP },

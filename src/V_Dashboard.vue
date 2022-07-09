@@ -3,12 +3,21 @@ import { ref } from 'vue';
 import TopBar from './TopBar.vue';
 import TabBar from './TabBar.vue';
 import { fetching } from './utils'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 // before login can do pin/simlock/language
 const get_web_language = await fetching('get_web_language=1&')
-const get_simlock_status = await fetching('get_simlock_status=1&')
-const get_pin_operate_result = await fetching('get_pin_operate_result=1&')
+console.log(get_web_language?.language)
 
+const get_simlock_status = await fetching('get_simlock_status=1&')
+if (get_simlock_status?.status === "1")
+  return router.push('simlock')
+
+const get_pin_operate_result = await fetching('get_pin_operate_result=1&')
+if (get_pin_operate_result?.status === "1")
+  return router.push('pinlock')
 
 // const web_login = await fetching('web_login={"passwd":"admin"}&')
 // document.cookie = "SessionId=" + web_login.session
