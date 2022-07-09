@@ -13,7 +13,7 @@ const onSubmit = async () => {
     "pinCode": pinLockCode.value,
   }
   console.log(form)
-  const result = await fetching('operate_pin=' + JSON.stringify() + '&')
+  const result = await fetching('operate_pin=' + JSON.stringify(form) + '&')
   if (!result || result?.result != 'ok') {
     Dialog({ message: result?.message || "Very Big Exception" });
     return;

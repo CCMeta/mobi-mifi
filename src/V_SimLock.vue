@@ -9,6 +9,7 @@ const simLockCode = ref('')
 
 
 const onSubmit = async () => {
+  const form = {}
   console.log(form)
   const result = await fetching('unlock_simlock=' + simLockCode + '&')
   if (!result || result?.result != 'ok') {
