@@ -6,6 +6,8 @@ import { Dialog } from 'vant';
 
 const router = useRouter()
 const pinLockCode = ref('')
+const get_pin_setting = ref(await fetching('get_pin_setting=1&'))
+const remain = ref(get_pin_setting.value.pinRemain)
 
 
 const onSubmit = async () => {
@@ -16,6 +18,9 @@ const onSubmit = async () => {
   const result = await fetching('operate_pin=' + JSON.stringify(form) + '&')
   if (!result || result?.result != 'ok') {
     Dialog({ message: result?.message || "Very Big Exception" });
+    get_pin_setting.value = await fetching('get_pin_setting=1&')
+    remain.value = get_pin_setting.value.pinRemain
+    pinLockCode.value = ''
     return;
   }
   router.push('/')
@@ -29,7 +34,8 @@ const onSubmit = async () => {
     <br />
 
     <van-cell-group inset>
-      <van-field v-model="pinLockCode" type="text" placeholder="Current Account" />
+      <van-field label="PIN Code" :error-message="`Trial Times Remain: ${remain}`" v-model="pinLockCode" type="text"
+        placeholder="Enter PIN Code" />
     </van-cell-group>
 
     <br />

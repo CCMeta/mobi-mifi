@@ -18,6 +18,7 @@ const onSubmit = async () => {
   const result = await fetching('web_login=' + JSON.stringify(form) + '&')
   if (!result || result?.result != 'ok') {
     Dialog({ message: result?.message || "Very Big Exception" });
+    password.value = ''
     return;
   }
   document.cookie = "SessionId=" + result.session

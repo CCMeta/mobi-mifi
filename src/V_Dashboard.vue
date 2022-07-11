@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 import TopBar from './TopBar.vue';
 import TabBar from './TabBar.vue';
 import { fetching } from './utils'
@@ -16,7 +16,7 @@ const network_speed = await fetching('network_speed=1&')
 const navtop_info = await fetching('navtop_info=1&')
 const connected_devices = await fetching('connected_devices=1&')
 
-onMounted(async () => {
+onBeforeMount(async () => {
   const router = useRouter()
 
   const get_simlock_status = await fetching('get_simlock_status=1&')
