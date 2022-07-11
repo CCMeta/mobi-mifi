@@ -12,10 +12,10 @@ const colors = {
 const network_info = await fetching('network_info=1&')
 const navtop_info = await fetching('navtop_info=1&')
 
-const gprsStatusColor = network_info.gprsStatus === '1' ? colors.on : colors.off
-const battrayStatusColor = navtop_info.batteryRemain > '20' ? colors.on : colors.off
-const smsStatusColor = navtop_info.tobeReadSMS > '0' ? colors.warn : colors.idle
-const wifiStatusColor = navtop_info.apStatus === '1' ? colors.on : colors.off
+const gprsStatusColor = network_info?.gprsStatus === '1' ? colors.on : colors.off
+const battrayStatusColor = navtop_info?.batteryRemain > '20' ? colors.on : colors.off
+const smsStatusColor = navtop_info?.tobeReadSMS > '0' ? colors.warn : colors.idle
+const wifiStatusColor = navtop_info?.apStatus === '1' ? colors.on : colors.off
 
 function string2Unicode(str) {
   var arr;

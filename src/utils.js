@@ -1,5 +1,5 @@
-// const server = 'http://192.168.1.1/api'
-const server = '/d/'
+const server = 'http://192.168.1.1/api'
+// const server = '/d/'
 
 const method = 'post'
 const mode = 'cors'// Access-Control-Allow-Origin: http://ccmeta.com:3000
