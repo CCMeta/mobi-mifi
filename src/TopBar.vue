@@ -17,7 +17,7 @@ const battrayStatusColor = navtop_info?.batteryRemain > '20' ? colors.on : color
 const smsStatusColor = navtop_info?.tobeReadSMS > '0' ? colors.warn : colors.idle
 const wifiStatusColor = navtop_info?.apStatus === '1' ? colors.on : colors.off
 
-function string2Unicode(str) {
+function string2Unicode(str = '') {
   var arr;
   var unicode = [];
   if (str.lastIndexOf(".") === str.length - 1) { str = str.substring(0, str.lastIndexOf(".")); }
@@ -72,7 +72,7 @@ function unicode2String(unicode) {
             <path
               d="M0 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm2-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H2zm14 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z">
             </path>
-            <path :d="` M2 6h${navtop_info?.batteryRemain / 10.00}v4H2V6z `"></path>
+            <path :d="` M2 6h${navtop_info?.batteryRemain ?? 0 / 10.00}v4H2V6z `"></path>
           </svg>
         </van-icon>
 
