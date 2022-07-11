@@ -7,7 +7,7 @@ const colors = {
   off: "#ef5350",
   on: "#80FF00",
   warn: "#ffee58",
-  idle: "#FFF",
+  idle: "#999",
 }
 const network_info = await fetching('network_info=1&')
 const navtop_info = await fetching('navtop_info=1&')

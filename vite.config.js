@@ -9,11 +9,11 @@ export default {
       less: {
         javascriptEnabled: true,
         modifyVars: {
-          "font-size-sm": "13px",
-          "font-size-md": "15px",
-          "font-size-lg": "17px",
-          "action-bar-button-danger-color": "#7232dd",
-          "action-bar-button-warning-color": "#3eaf7c",
+          // "font-size-sm": "13px",
+          // "font-size-md": "15px",
+          // "font-size-lg": "17px",
+          // "action-bar-button-danger-color": "#7232dd",
+          // "action-bar-button-warning-color": "#3eaf7c",
         },
       },
     },
