@@ -29,7 +29,7 @@ export async function fetching(body) {
     return JSON.parse(await res.text())
   } catch (error) {
     console.log(error)
-    return false
+    return null
   }
 }
 

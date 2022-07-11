@@ -24,11 +24,11 @@ onBeforeMount(async () => {
     await router.push('simlock')
 
   const get_pin_operate_result = await fetching('get_pin_setting=1&')
-  if (get_pin_operate_result?.pinStatus === 1)
+  if (get_pin_operate_result?.pinEnabled === 1 && get_pin_operate_result?.pinStatus === 1)
     await router.push('pinlock')
 })
 
-const bit2MB = bit => bit.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
+const bit2MB = bit => bit?.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
 </script>
 
 <template>
@@ -66,7 +66,7 @@ const bit2MB = bit => bit.length > 0 ? (bit / 8 / 1024 / 1024).toFixed(2) : 0
 
       <br>
       <van-cell-group class="client-panel" :title="'Clients = ' + connected_devices?.totalNum" inset>
-        <van-cell :title="device.hostName" :value="device.ip_addr" :label="device.mac_addr" center icon="desktop-o"
+        <van-cell :title="device?.hostName" :value="device?.ip_addr" :label="device?.mac_addr" center icon="desktop-o"
           v-for="device in connected_devices?.devices" />
       </van-cell-group>
     </div>
