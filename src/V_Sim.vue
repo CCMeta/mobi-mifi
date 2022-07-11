@@ -34,7 +34,7 @@ const onConfirm = (value) => {
   showPicker.value = false;
 }
 
-const onClickLeft = () => router.go(-1)
+const onClickLeft = () => router.push('/')
 
 
 function boolToInt(v) {

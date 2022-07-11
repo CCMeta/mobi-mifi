@@ -40,7 +40,7 @@ const onSubmitReset = async () => {
   }
   Dialog({ message: 'Save Success' });
 }
-const onClickLeft = () => router.go(-1)
+const onClickLeft = () => router.push('/')
 </script>
 
 <template>

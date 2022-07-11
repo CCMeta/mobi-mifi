@@ -5,7 +5,7 @@ import { fetching } from './utils'
 
 const router = useRouter()
 
-const onClickLeft = () => router.go(-1) 
+const onClickLeft = () => router.push('/') 
 </script>
 
 <template>

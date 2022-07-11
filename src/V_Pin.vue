@@ -25,7 +25,7 @@ const onSubmit = async () => {
   }
   Dialog({ message: 'Save Success' });
 };
-const onClickLeft = () => router.go(-1)
+const onClickLeft = () => router.push('/')
 function boolToInt(v) {
   if (v.value === true)
     return 1

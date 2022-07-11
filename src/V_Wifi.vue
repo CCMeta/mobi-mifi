@@ -42,7 +42,7 @@ function boolToInt(v) {
     return 1
   return 0
 }
-const onClickLeft = () => router.go(-1)
+const onClickLeft = () => router.push('/')
 </script>
 
 <template>

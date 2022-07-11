@@ -6,7 +6,7 @@ import { fetching } from './utils'
 const router = useRouter()
 const get_device_info = await fetching('get_device_info=1&')
 
-const onClickLeft = () => router.go(-1) 
+const onClickLeft = () => router.push('/') 
 </script>
 
 <template>
